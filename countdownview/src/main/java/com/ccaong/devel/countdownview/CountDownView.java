@@ -29,7 +29,7 @@ public class CountDownView extends FrameLayout {
     /**
      * 间隔时间
      */
-    private int mTimeInterval = 1;
+    private int mTimeInterval;
 
     /**
      * 倒计时不足多少时提醒
@@ -38,19 +38,19 @@ public class CountDownView extends FrameLayout {
     /**
      * 显示 天
      */
-    private int mTimeDD = 0;
+    private int mTimeDD;
     /**
      * 显示  小时
      */
-    private int mTimeHH = 0;
+    private int mTimeHH;
     /**
      * 显示  分钟
      */
-    private int mTimeMM = 100;
+    private int mTimeMM;
     /**
      * 显示  秒
      */
-    private int mTimeSS = 0;
+    private int mTimeSS;
 
     private Boolean showDay = false;
     private Boolean showHour = false;
@@ -59,7 +59,7 @@ public class CountDownView extends FrameLayout {
 
     private Boolean showRemind = false;
 
-    private int showSeparatorStyle = 0;
+    private int showSeparatorStyle;
     private TimesUpListener mTimesUpListener;
     private TextView tvCountTime;
     private TextView tvTitle;
@@ -149,6 +149,14 @@ public class CountDownView extends FrameLayout {
         View view = LayoutInflater.from(mContext).inflate(R.layout.time, null);
         tvTitle = view.findViewById(R.id.textView);
         tvCountTime = view.findViewById(R.id.tv_time);
+        mStartTime = 60 * 1000L;
+        mRemindTime = 10L;
+        mTimeInterval = 1;
+        mTimeDD = 0;
+        mTimeHH = 0;
+        mTimeMM = 1;
+        mTimeSS = 0;
+        showSeparatorStyle = 0;
         this.addView(view);
     }
 
@@ -229,6 +237,11 @@ public class CountDownView extends FrameLayout {
 
     }
 
+    /**
+     * 设置分隔符的样式，有两个选项：ZN_CH->1天00时15分01秒和 EN-> 1:00:15:01
+     *
+     * @param countDownStyle
+     */
     public void setSeparatorStyle(CountDownConstant.CountDownStyle countDownStyle) {
         if (countDownStyle == CountDownConstant.CountDownStyle.EN) {
             this.showSeparatorStyle = 0;
@@ -288,7 +301,7 @@ public class CountDownView extends FrameLayout {
     }
 
 
-    public void setTime() {
+    private void setTime() {
         String strTime = "";
         String[] styleEN = {":", ":", ":", ""};
         String[] styleZN_CH = {"天", "时", "分", "秒"};
