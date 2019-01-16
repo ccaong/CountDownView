@@ -16,10 +16,10 @@
 * 1.简单，使用十分简单，只需要输入倒计时的开始时间，然后start()即可
 * 2.样式较多，可配置性强,
 
-![image](https://github.com/ccaong/CountDownView/tree/master/image/1.jpg)
-![image](https://github.com/ccaong/CountDownView/tree/master/image/2.jpg)
-![image](https://github.com/ccaong/CountDownView/tree/master/image/3.jpg)
-![image](https://github.com/ccaong/CountDownView/tree/master/image/4.jpg)
+![image](https://github.com/ccaong/CountDownView/blob/master/image/1.jpg)
+![image](https://github.com/ccaong/CountDownView/blob/master/image/2.jpg)
+![image](https://github.com/ccaong/CountDownView/blob/master/image/3.jpg)
+![image](https://github.com/ccaong/CountDownView/blob/master/image/4.jpg)
 
 ## 集成方式
 
