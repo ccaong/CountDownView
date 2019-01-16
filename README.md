@@ -1,6 +1,9 @@
 # CountDownView
 一款针对Android平台的倒计时插件。插件十分简单，是基于Handler来实现的倒计时功能。适合懒得自己去写倒计时的逻辑的用户。
 
+
+[![](https://jitpack.io/v/ccaong/CountDownView.svg)](https://jitpack.io/#ccaong/CountDownView)
+
 ## 目录
 -[项目特点](#项目特点)<br>
 -[集成方式](#集成方式)<br>
