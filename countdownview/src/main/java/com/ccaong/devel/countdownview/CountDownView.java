@@ -96,7 +96,9 @@ public class CountDownView extends FrameLayout {
 
             if (msg.what == MSG_TIME_INTERVAL) {
                 if (mStartTime <= 0) {
-                    mTimesUpListener.timesUp();
+                    if (mTimesUpListener!=null){
+                        mTimesUpListener.timesUp();
+                    }
                 } else {
                     if (mTimeSS - mTimeInterval < 0) {
                         mTimeSS = 60 + (mTimeSS - mTimeInterval);
@@ -118,7 +120,9 @@ public class CountDownView extends FrameLayout {
                     if (mStartTime <= mRemindTime) {
                         if (showRemind) {
                             showRemind = false;
-                            mTimesUpListener.timeRemind();
+                            if (mTimesUpListener!=null){
+                                mTimesUpListener.timeRemind();
+                            }
                             if (mTimeInterval != 1) {
                                 mHandler.sendEmptyMessageDelayed(MSG_ONE_SECOND, 1 * 1000);
                             }
@@ -130,7 +134,9 @@ public class CountDownView extends FrameLayout {
                 }
             } else if (msg.what == MSG_ONE_SECOND) {
                 if (mStartTime <= 0) {
-                    mTimesUpListener.timesUp();
+                    if (mTimesUpListener!=null){
+                        mTimesUpListener.timesUp();
+                    }
                     setTime();
 
                     mHandler.removeMessages(MSG_TIME_INTERVAL);
@@ -290,6 +296,7 @@ public class CountDownView extends FrameLayout {
      * 停止
      */
     public void stop() {
+
     }
 
 
