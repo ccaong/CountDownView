@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         initView();
 
         initData();
-
         initTop2();
+        initTop();
     }
 
     @Override
@@ -138,5 +138,9 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
     private void initTop2() {
         Log.e("打印分支", "现在是top2分支");
+    }
+
+    private void initTop() {
+        Log.e("打印分支：", "Top分支");
     }
 }
