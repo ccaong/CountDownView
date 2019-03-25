@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         initView();
 
         initData();
-        
+
         initTop2();
     }
 
