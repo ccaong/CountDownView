@@ -2,6 +2,7 @@ package com.ccaong.devel.countdown;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         initView();
 
         initData();
+        initTop();
     }
 
     @Override
@@ -131,5 +133,9 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
             }
         });
+    }
+
+    private void initTop() {
+        Log.e("打印分支：", "Top分支");
     }
 }
